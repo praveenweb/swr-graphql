@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import fetch from '../libs/fetch';
 
 import useSWR from 'swr'
