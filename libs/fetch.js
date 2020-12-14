@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 
-const GRAPHQL_ENDPOINT = 'https://swr-hasura-graphql.herokuapp.com/v1/graphql';
+const GRAPHQL_ENDPOINT = 'http://localhost:8080/v1/graphql';
 
 const headers = {'Content-Type': 'application/json'};
 

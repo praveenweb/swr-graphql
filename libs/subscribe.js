@@ -3,7 +3,7 @@ import { mutate } from 'swr'
 let latestData = null
 
 // setup ws and broadcast to all SWRs
-const GRAPHQL_ENDPOINT_WS = 'wss://swr-hasura-graphql.herokuapp.com/v1/graphql';
+const GRAPHQL_ENDPOINT_WS = 'ws://localhost:8080/v1/graphql';
 
 const headers = {'Content-Type': 'application/json'};
 
