@@ -1,7 +1,8 @@
+import React from 'react';
 import useSWR, { mutate, trigger } from 'swr'
 import fetch from '../libs/fetch'
 
-const uuidv1 = require('uuid/v1');
+import { v4 as uuidv4 } from 'uuid';
 
 const query = {
   'query': 'query { users(limit: 10, order_by: {created_at: desc}) { id name } }'
@@ -18,7 +19,7 @@ export default () => {
   async function handleSubmit(event) {
     event.preventDefault()
     // mutate current data to optimistically update the UI
-    mutate(query, {users: [...data.users, {id: uuidv1(), name: text}]}, false)
+    mutate(query, {users: [...data.users, {id: uuidv4(), name: text}]}, false)
     // send text to the API
     const mutation = {
       'query': 'mutation users($name: String!) { insert_users(objects: [{name: $name}]) { affected_rows } }',
