@@ -17,7 +17,7 @@ const subscribeData = async(...args) => {
   return subscribe(USER_SUBSCRIPTION);
 };
 
-export default () => {
+export default function Subscription() {
   const { data } = useSWR('subscription', subscribeData);
   if(!data) {
     return <div>Loading...</div>
