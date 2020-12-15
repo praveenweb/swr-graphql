@@ -10,7 +10,7 @@ const getData = async(...args) => {
   return await fetch(query);
 };
 
-export default () => {
+export default function Main() {
   const { data, error } = useSWR(query, getData);
   if(error) {
     return <div>Error...</div>

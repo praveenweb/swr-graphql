@@ -12,7 +12,7 @@ const getData = async(...args) => {
   return await fetch(query);
 };
 
-export default () => {
+export default function OptimisticUI() {
   const [text, setText] = React.useState('');
   const { data } = useSWR(query, getData)
 
